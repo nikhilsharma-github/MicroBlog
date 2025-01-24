@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% if title %}
+    <title>HomePage - {{title}}</title>
+    {% else %}
+    <title>HomePage - Microblog</title>
+    {% endif %}
+</head>
+
+<body>
+    <div>
+        <h1>Microblog</h1>
+        <a herf="{{url_for('index')}}">Home</a>
+        <a href="{{url_for('login')}}">Login</a>
+    </div>
+    <hr>
+    <!-- Flash messages  -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor%}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- template inheritance block -->
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

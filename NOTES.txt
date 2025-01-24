@@ -1,0 +1,8 @@
+Creating a Virtual Environment:
+python3 -m venv envName
+
+Activate the Environment:
+$ venv\Scripts\activate
+
+
+Blog 1 is important to understand the basics of flask:

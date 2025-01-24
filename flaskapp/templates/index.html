@@ -1,0 +1,12 @@
+<!-- extending template  -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Dynamic content using in HTML -->
+<h1>Hello {{user.user}}</h1>
+{% for post in posts %}
+<p>{{post.author}} : <b>{{post.content}}</b></p>
+{% endfor %}
+
+{% endblock %}

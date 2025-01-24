@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Sign In</h1>
+<!-- using form element  -->
+<form method="post" action="" novalidate>
+    <!-- this tag is used to add our CSRF token to the form  -->
+    {{form.hidden_tag()}}
+    
+    <!-- wtf-forms  -->
+    <p>
+        {{form.username.label}}
+        {{form.username(size=32)}}
+        {% for error in form.username.errors %}
+        <span style="color:red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.password.label}}
+        {{form.password(size=32)}}
+        {% for error in form.password.errors%}
+        <span style="color:red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.remember_me()}}
+        {{form.remember_me.label}}
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
+</form>
+
+{% endblock %}
