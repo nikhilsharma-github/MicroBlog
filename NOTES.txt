@@ -1,8 +1,13 @@
-Creating a Virtual Environment:
+Blog1: 
+- Creating a Virtual Environment:
 python3 -m venv envName
 
-Activate the Environment:
+- Activate the Environment:
 $ venv\Scripts\activate
 
+- Setting up environment variable for our flask app 
+export FLASK_APP=microblog.py
 
-Blog 1 is important to understand the basics of flask:
+- To run our flask app 
+flask run
+
