@@ -11,3 +11,12 @@ export FLASK_APP=microblog.py
 - To run our flask app 
 flask run
 
+
+
+
+Chapter 5:
+Werkzeug is used for password hashing technique.
+>>> from werkzeug.security import generate_password_hash
+>>> hash=generate_password_hash("foobar")
+>>> hash
+>>> check_password_hash(hash, 'foobar') TRUE

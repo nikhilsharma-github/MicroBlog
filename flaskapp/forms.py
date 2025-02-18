@@ -3,7 +3,10 @@ from flask_wtf import FlaskForm
 # importing elements for our form 
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 # importing DataValidation element 
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
+import sqlalchemy as sa
+from flaskapp import db
+from flaskapp.models import User
 
 
 # creating a class for our LoginForm and its objects 
@@ -12,3 +15,26 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password',validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
+
+# creating a class for our RegistrationForm and its objects 
+
+class RegistrationForm(FlaskForm):
+    username = StringField('Username',validators=[DataRequired()])
+    email = StringField('Email',validators=[DataRequired(), Email()])
+    password = PasswordField('Password',validators=[DataRequired()])
+    password2 = PasswordField('Confirm Password', validators=[DataRequired(),EqualTo('password')])
+    submit = SubmitField('Register')
+
+    def validate_username(self,username):
+        user = db.session.scalar(sa.select(User).where(
+            User.username==username.data
+        ))
+        if user is not None:
+            raise ValidationError('This Username Already Exists')
+
+    def validate_email(self,email):
+        user = db.session.scalar(sa.select(User).where(
+            User.email==email.data
+        ))
+        if user is not None:
+            raise ValidationError("Please select a different Email Address")
