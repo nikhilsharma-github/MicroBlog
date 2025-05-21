@@ -20,3 +20,22 @@ Werkzeug is used for password hashing technique.
 >>> hash=generate_password_hash("foobar")
 >>> hash
 >>> check_password_hash(hash, 'foobar') TRUE
+
+
+Chapter 6: part-vi-profile-page-and-avatars
+
+Avatars:
+A. Creating a profile page and adding an avatar, will use Gravatar which will take the email has value for a dynamic image generation  
+Ex:
+>>> from hashlib import md5
+>>> 'https://www.gravatar.com/avatar/' + md5(b'john@example.com').hexdigest()
+'https://www.gravatar.com/avatar/d4c74594d841139328695756648b6bd6'
+
+B. Added the subtemplate _post.html 
+C. Added the Edit Profile section. 
+D. Flask migration 
+flask db migrate -m "Added two new fields in User Model: about_me and last_seen"
+flask db upgrade
+E. Added before_request for updating the last_seen column for user 
+F. Added the Edit Profile Form in the Forms.py with 3 fields as of now. 
+

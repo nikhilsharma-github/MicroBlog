@@ -1,0 +1,9 @@
+<!-- ### This is a subtemplate which will be utilized by other .html files  -->
+<!-- Its a kind of reusable component for the other parts of our webpage where we will be using this same element at multiple locations, so reducing the redundancy -->
+
+<table>
+    <tr valign="top">
+        <td><img src="{{ post.author.avatar(36) }}"/></td>
+        <td>{{ post.author.username }} says: <br> {{ post.body }}</td>
+    </tr>
+</table>
