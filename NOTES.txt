@@ -51,6 +51,13 @@ C. Setting up File Logger for the Debugging, it will save .log file and save the
 D. Set the FLASK_DEBUG as default true or 1 in .flaskenv file. 
 
 
+Chapter 8: Adding Followers
+- For Implementing Followers and Followed, we can't simply use RD tables as we need many to many relationship, so for that we need an association table. 
+- Added a new Association table for maintaining followers and following count.
+- Added followers and following methods to find out count of following, followers, follow unfollow etc.
+- Added method to query many to many relationship DB for retrieving user, post and follower and their posts results  
+- Utilizing unittest package to test out our DB model, added tests.py file for testing our functionalities. 
+
 
 #### DATABASE ACCESS:
 Temp User Credentials:
@@ -67,10 +74,10 @@ password: Alice@123
 >>> app.app_context().push()
 
 -- Adding the User 
->>> u = User(username="Anmol", email="anmol1@gmail.com")
->>> db.session.add(u)
->>> db.session.commit()
->>> u 
+u = User(username="alice", email="alice@example.com")
+db.session.add(u)
+db.session.commit()
+u 
 
 
 --Querying the DB
@@ -110,3 +117,72 @@ Adding a Blog post:
 >>> query = sa.select(User).where(User.username.like('s%'))
 >>> db.session.scalars(query).all()
 [<User susan>]
+
+
+
+### BULK INSERTION IN DB FROM SCRATCH:
+
+from flaskapp import app, db
+from flaskapp.models import User, Post
+import sqlalchemy as sa
+app.app_context().push()
+query = sa.select(User)
+users = db.session.scalars(query).all()
+users
+
+
+USERS SHOULD BE CREATED FROM REGISTRATION METHOD(So that we can login later on)
+u = User(username="alice", email="alice@example.com")
+db.session.add(u)
+db.session.commit()
+
+u = User(username="bob", email="bob@example.com")
+db.session.add(u)  
+db.session.commit()
+
+u = User(username="clara", email="clara@example.com")
+db.session.add(u)  
+db.session.commit()
+
+u = User(username="daisy", email="daisy@example.com")
+db.session.add(u)  
+db.session.commit()
+
+
+(Inserting Posts for the Registered Users)
+u = db.session.get(User, 1)
+p = Post(body='Weather is Good!', author=u)
+db.session.add(p)
+db.session.commit()
+p = Post(body='Traffic is High!', author=u)
+db.session.add(p)
+db.session.commit()
+
+u = db.session.get(User, 2)
+p = Post(body='Life is Good!', author=u)
+db.session.add(p)
+db.session.commit()
+p = Post(body='Life Sucks!', author=u)
+db.session.add(p)
+db.session.commit()
+
+u = db.session.get(User, 3)
+p = Post(body='Need to Sleep!', author=u)
+db.session.add(p)
+db.session.commit()
+p = Post(body='Sleep is Life!', author=u)
+db.session.add(p)
+db.session.commit()
+
+u = db.session.get(User, 4)
+p = Post(body='The power of Now!', author=u)
+db.session.add(p)
+db.session.commit()
+p = Post(body='Now is everything!', author=u)
+db.session.add(p)
+db.session.commit()
+
+query = sa.select(Post)
+posts = db.session.scalars(query)
+for p in posts:
+    print(p.id, p.author.username, p.body)    
