@@ -59,6 +59,12 @@ Chapter 8: Adding Followers
 - Utilizing unittest package to test out our DB model, added tests.py file for testing our functionalities. 
 
 
+Chapter 9: Adding Posts from the DB and explore Page.
+- Showing the posts from the DB now on the profile. 
+- Adding the explore section to look for other people's posts. 
+- Adding the Pagination on Posts on Explore and Profile Page.
+
+
 #### DATABASE ACCESS:
 Temp User Credentials:
 username: Alice
@@ -117,6 +123,10 @@ Adding a Blog post:
 >>> query = sa.select(User).where(User.username.like('s%'))
 >>> db.session.scalars(query).all()
 [<User susan>]
+
+# Pagination 
+>>> query = sa.select(Post).order_by(Post.timestamp.desc())
+>>> posts = db.paginate(query, page=1, per_page=20, error_out=False).items
 
 
 
