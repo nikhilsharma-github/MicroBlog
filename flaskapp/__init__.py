@@ -14,6 +14,7 @@ import logging
 # file application logger 
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+from flask_mail import Mail
 
 
 
@@ -24,6 +25,9 @@ app=Flask(__name__)
 # We use a secret key for our wtf-forms to get protected against the CSRF attacks, so this configuration is important 
 # app.config['SECRET_KEY']='you-will-never-guess'
 app.config.from_object(Config)
+
+# creating the object for Flask Mail Service 
+mail = Mail(app)
 
 # providing our app to the SQLAlchemy class to get the db object, this object represents our database
 db=SQLAlchemy(app)

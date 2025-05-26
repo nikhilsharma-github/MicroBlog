@@ -59,10 +59,17 @@ Chapter 8: Adding Followers
 - Utilizing unittest package to test out our DB model, added tests.py file for testing our functionalities. 
 
 
-Chapter 9: Adding Posts from the DB and explore Page.
+Chapter 9: Adding Posts from the DB and explore Page, and Pagination.
 - Showing the posts from the DB now on the profile. 
 - Adding the explore section to look for other people's posts. 
 - Adding the Pagination on Posts on Explore and Profile Page.
+
+Chapter 10: Adding Email Support for Password Reset. 
+- Using Brevo SMTP Service for Free Email Service.
+- Implemented JWT for resetting link. 
+- Added Password Reset Link in the Reset Password Mail using JWT Authentication. 
+
+
 
 
 #### DATABASE ACCESS:

@@ -83,3 +83,5 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2025-05-24 00:25:06,274 INFO: Microblog startup [in F:\NIKHIL INVENTORY\PROGRAMMING AND PROJECTS\python practice\microblog\flaskapp\__init__.py:72]
 2025-05-24 00:30:35,749 INFO: Microblog startup [in F:\NIKHIL INVENTORY\PROGRAMMING AND PROJECTS\python practice\microblog\flaskapp\__init__.py:72]
 2025-05-24 00:33:05,780 INFO: Microblog startup [in F:\NIKHIL INVENTORY\PROGRAMMING AND PROJECTS\python practice\microblog\flaskapp\__init__.py:72]
+2025-05-24 14:15:06,153 INFO: Microblog startup [in F:\NIKHIL INVENTORY\PROGRAMMING AND PROJECTS\python practice\microblog\flaskapp\__init__.py:72]
+2025-05-25 14:34:14,673 INFO: Microblog startup [in F:\NIKHIL INVENTORY\PROGRAMMING AND PROJECTS\python practice\microblog\flaskapp\__init__.py:77]
