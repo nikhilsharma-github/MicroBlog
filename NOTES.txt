@@ -69,6 +69,10 @@ Chapter 10: Adding Email Support for Password Reset.
 - Implemented JWT for resetting link. 
 - Added Password Reset Link in the Reset Password Mail using JWT Authentication. 
 
+Chapter 11: Added Bootstrap Flask Framework for CSS Changes.
+- Added Bootstrap and its implementation specifically based for Flask apps using Macros.
+- Created a separate file bootstrap_wtf.html which handles the various forms UI using Macros in Python
+
 
 
 
