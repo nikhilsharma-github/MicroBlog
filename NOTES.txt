@@ -73,6 +73,8 @@ Chapter 11: Added Bootstrap Flask Framework for CSS Changes.
 - Added Bootstrap and its implementation specifically based for Flask apps using Macros.
 - Created a separate file bootstrap_wtf.html which handles the various forms UI using Macros in Python
 
+Chapter 12: Solving UTC to the local time for the Users using Flask-Moment(Moment.js for Flask).
+- Utilized Moment.js + flask_moment package to reformat the Date from UTC to local timezone for post and user profile sections. 
 
 
 

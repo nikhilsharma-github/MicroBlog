@@ -15,6 +15,7 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
+from flask_moment import Moment
 
 
 
@@ -28,6 +29,9 @@ app.config.from_object(Config)
 
 # creating the object for Flask Mail Service 
 mail = Mail(app)
+
+# creating the object for Flask Moment 
+moment = Moment(app)
 
 # providing our app to the SQLAlchemy class to get the db object, this object represents our database
 db=SQLAlchemy(app)
