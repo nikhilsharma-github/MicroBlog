@@ -76,6 +76,16 @@ Chapter 11: Added Bootstrap Flask Framework for CSS Changes.
 Chapter 12: Solving UTC to the local time for the Users using Flask-Moment(Moment.js for Flask).
 - Utilized Moment.js + flask_moment package to reformat the Date from UTC to local timezone for post and user profile sections. 
 
+Chapter 13: L18n and L10n (Localization and Internationalization).
+- Adding the Translation workflow for the other non English speakers.
+- Utilizing the flask babel and langdetect packages to transpile the language from one format to the other and detect the language of the post and store this value in the DB for that post.
+- If the locale language is different from the language of the post, then the page will get automatically translated.
+
+
+Chapter 14: Language Translation option using AJAX.
+- using langdetect module in python.
+- Utilizing pythonanywhere free text translation API as other APIs are paid.
+- If we enter some post text different than the locale langauge, then we will get a translation link which will translate the text in realtime for that post. 
 
 
 #### DATABASE ACCESS:

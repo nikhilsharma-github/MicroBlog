@@ -1,5 +1,6 @@
 # importing the Flask class from flask package 
 from flask import Flask
+from flask import request 
 # importing the Config Class from config.py package 
 from config import Config
 # importing SQLAlchemy class from flask_sqlalchemy package 
@@ -14,14 +15,27 @@ import logging
 # file application logger 
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+# flask mail package for sending emails 
 from flask_mail import Mail
+# moments package for handling realtime Date conversion from UTC to other timezones 
 from flask_moment import Moment
+# flask babel for transpiling the languges 
+from flask_babel import Babel, lazy_gettext as _l
+
+
+# Getting the locale language codes 
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    # return 'ja'
+
 
 
 
 # creating the object of our application from Flask class, and providing the default __name__ configuration for current package which is __init.py__ 
 app=Flask(__name__)
 
+# creating the object for Babel service 
+babel = Babel(app, locale_selector=get_locale)
 
 # We use a secret key for our wtf-forms to get protected against the CSRF attacks, so this configuration is important 
 # app.config['SECRET_KEY']='you-will-never-guess'
@@ -42,6 +56,8 @@ migrate=Migrate(app,db)
 # creating a login object from the LoginManager Class which will take care of the Login related logics and redirections 
 login=LoginManager(app)
 login.login_view='login'
+login.login_message = _l('Please log in to access this page.')
+
 
 # Using it to handle cyclic imports issue 
 # this model package will define the structure of our database 

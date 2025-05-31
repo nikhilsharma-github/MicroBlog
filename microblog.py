@@ -3,7 +3,7 @@ from flaskapp import app
 
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from flaskapp import app, db
+from flaskapp import app, db, cli
 from flaskapp.models import User, Post
 
 @app.shell_context_processor
