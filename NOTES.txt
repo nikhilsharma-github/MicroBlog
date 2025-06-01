@@ -87,6 +87,14 @@ Chapter 14: Language Translation option using AJAX.
 - Utilizing pythonanywhere free text translation API as other APIs are paid.
 - If we enter some post text different than the locale langauge, then we will get a translation link which will translate the text in realtime for that post. 
 
+Chapter 15: Improvising the Application Structure. 
+- Refactoring of the Overall Application.
+- We used Blueprint methodology to create separate functionalities for different parts of our application  
+- It was a total complex task ngl.
+- Fixed the Reset Mail issue also.
+- Added .flaskenv and .env for env variables setup.
+- 
+
 
 #### DATABASE ACCESS:
 Temp User Credentials:

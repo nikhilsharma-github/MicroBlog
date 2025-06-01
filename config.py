@@ -2,8 +2,11 @@
 
 import os
 
+from dotenv import load_dotenv
+
 # configuring our base directory path 
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 class Config:
     # defining our SECRET_KEY in Config as ENVIRONMENT_VARIABLE
@@ -13,11 +16,12 @@ class Config:
 
     # configuring the ERROR mailing 
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
-    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
-    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
-    MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL') is not None
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+
     ADMINS = ['nikhilsharma.csgeek@gmail.com']
     MAIL_DEFAULT_SENDER=('Nick Microblog test', 'nikhilsharma.csgeek@gmail.com')
 

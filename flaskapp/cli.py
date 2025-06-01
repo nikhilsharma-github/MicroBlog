@@ -1,10 +1,12 @@
 import os
 import click
-from flaskapp import app
+from flask import Blueprint
 
 # Setting up Command Line Interface for the Translation Commands 
 
-@app.cli.group()
+bp = Blueprint('cli', __name__, cli_group=None)
+
+@bp.cli.group()
 def translate():
     """Translation and localization commands."""
     pass
