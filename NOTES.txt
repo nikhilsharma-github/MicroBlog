@@ -93,7 +93,11 @@ Chapter 15: Improvising the Application Structure.
 - It was a total complex task ngl.
 - Fixed the Reset Mail issue also.
 - Added .flaskenv and .env for env variables setup.
-- 
+
+
+Chapter 20: Popover on Profile using JS.
+- Using Bootstrap Popover property to add a dynamic popover on hovering on the profile of the User.
+- It will show the Details of the user. 
 
 
 #### DATABASE ACCESS:
