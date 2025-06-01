@@ -99,6 +99,11 @@ Chapter 20: Popover on Profile using JS.
 - Using Bootstrap Popover property to add a dynamic popover on hovering on the profile of the User.
 - It will show the Details of the user. 
 
+Chapter 21: Adding Notification for the User.
+- Sending message to each other. 
+- Incorporated Websockets for implementing the realtime Messaging Service.
+- The interval based notification updation. 
+
 
 #### DATABASE ACCESS:
 Temp User Credentials:
