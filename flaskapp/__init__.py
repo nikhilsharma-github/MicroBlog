@@ -85,6 +85,9 @@ def create_app(config_class=Config):
     from flaskapp.cli import bp as cli_bp
     app.register_blueprint(cli_bp)
 
+    from flaskapp.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+    
     # Error Hadling using Event Logging(By Mail):
     if not app.debug:
         # Email Logger 

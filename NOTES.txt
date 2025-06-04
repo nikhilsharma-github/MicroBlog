@@ -105,6 +105,32 @@ Chapter 21: Adding Notification for the User.
 - The interval based notification updation. 
 
 
+Chapter 23: Application Programming Interface Providing. 
+- Adding different API routes for our application. 
+- API endpoints to give the User related info in JSON format to the user in the browser, but only the information.
+- Used the httpie library.
+
+Routes:
+-Return a user.
+GET	/api/users/<id>	
+-Return the collection of all users.
+GET	/api/users	
+-Return the followers of this user.
+GET	/api/users/<id>/followers	
+-Return the users this user is following.
+GET	/api/users/<id>/following	
+-Register a new user account.
+POST	/api/users	
+ http POST http://localhost:5000/api/users username=test password=test@123 email=test@example.com "about_me=Hello, my name is TEST."
+-Modify a user.
+PUT	/api/users/<id>	
+
+Generting a Token:
+http --auth <username>:<password> POST http://localhost:5000/api/tokens
+
+Using token to access APIs:
+ http -A bearer --auth <token> GET http://localhost:5000/api/users/1
+
 #### DATABASE ACCESS:
 Temp User Credentials:
 username: Alice
