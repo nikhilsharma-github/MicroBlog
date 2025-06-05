@@ -7,33 +7,43 @@
         <img src="{{ user.avatar(256) }}" class="avatar shadow mb-3" style="max-width: 100%;">
     </div>
     <div class="col-md-9">
-        <h1 class="fw-bold"><span class="text-primary">{{ user.username }}</span></h1>
-        {% if user.about_me %}<p class="text-black fs-5">{{ user.about_me }}</p>{% endif %}
-        {% if user.last_seen %}<p class="text-black fs-5">{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>{% endif %}
-        <p>
-            <span class="badge bg-primary">{{ _('%(count)d followers', count=user.followers_count()) }}</span>
-            <span class="badge bg-secondary">{{ _('%(count)d following', count=user.following_count()) }}</span>
+        <h1 class="fw-bold"><span class="text-primary"><i class="fa-solid fa-user me-2"></i>{{ user.username
+                }}</span></h1>
+        {% if user.about_me %}<p class="text-black bg-white rounded-2 fs-5 p-1">
+            <i class="fa-solid fa-quote-right me-2 text-info"></i>{{ user.about_me }}
+        </p>
+        {% endif %}
+        {% if user.last_seen %}<p class="text-black bg-white rounded-2 fs-5 p-1">
+            <i class="fa-solid fa-clock me-2 text-warning"></i>{{ _('Last seen on') }}: {{
+            moment(user.last_seen).format('LLL') }}
+            {% endif %}
+        </p>
+        <p class="fs-5">
+            <span class="badge bg-primary"><i class="fa-solid fa-person-walking-arrow-right me-1"></i>{{ _('%(count)d followers', count=user.followers_count()) }}</span>
+            <span class="badge bg-secondary"><i class="fa-solid fa-person-circle-plus me-1"></i>{{ _('%(count)d following', count=user.following_count()) }}</span>
         </p>
         {% if user == current_user %}
-            <p><a href="{{ url_for('main.edit_profile') }}" class="btn btn-outline-primary btn-sm">{{ _('Edit your profile') }}</a></p>
+        <p><a href="{{ url_for('main.edit_profile') }}" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-user-pen me-1"></i>{{ _('Edit your profile')
+                }}</a></p>
         {% elif not current_user.is_following(user) %}
-            <form action="{{ url_for('main.follow', username=user.username) }}" method="post" class="d-inline">
-                {{ form.hidden_tag() }}
-                {{ form.submit(value=_('Follow'), class_='btn btn-primary btn-sm') }}
-            </form>
+        <form action="{{ url_for('main.follow', username=user.username) }}" method="post" class="d-inline">
+            {{ form.hidden_tag() }}
+            {{ form.submit(value=_('Follow'), class_='btn btn-primary btn-sm') }}
+        </form>
         {% else %}
-            <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post" class="d-inline">
-                {{ form.hidden_tag() }}
-                {{ form.submit(value=_('Unfollow'), class_='btn btn-primary btn-sm') }}
-            </form>
+        <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post" class="d-inline">
+            {{ form.hidden_tag() }}
+            {{ form.submit(value=_('Unfollow'), class_='btn btn-primary btn-sm') }}
+        </form>
         {% endif %}
         {% if user != current_user %}
-            <a href="{{ url_for('main.send_message', recipient=user.username) }}" class="btn btn-outline-info text-primary btn-sm ms-2">{{ _('Send private message') }}</a>
+        <a href="{{ url_for('main.send_message', recipient=user.username) }}"
+            class="btn btn-info  btn-sm ms-2">{{ _('Send private message') }}</a>
         {% endif %}
     </div>
 </div>
 {% for post in posts %}
-    {% include '_post.html' %}
+{% include '_post.html' %}
 {% endfor %}
 <nav aria-label="Post navigation">
     <ul class="pagination justify-content-center">
