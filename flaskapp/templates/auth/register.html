@@ -4,9 +4,15 @@
 
 
 {% block content %}
-
-<h1>{{ _('Register') }}</h1>
-{{ wtf.quick_form(form) }}
-</form>
-
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h1 class="card-title mb-4 text-primary">{{ _('Register') }}</h1>
+                {{ wtf.quick_form(form) }}
+                <p class="mt-3">{{ _('Already a User?') }} <a class="text-success" href="{{ url_for('auth.login') }}">{{ _('Click to Login!') }}</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

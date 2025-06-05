@@ -1,0 +1,153 @@
+/* BODY  */
+body {
+background-color: #ffffff;
+/* opacity: 0.2; */
+background-image:  linear-gradient(30deg, #e5fcea 12%, transparent 12.5%, transparent 87%, #e5fcea 87.5%, #e5fcea), linear-gradient(150deg, #e5fcea 12%, transparent 12.5%, transparent 87%, #e5fcea 87.5%, #e5fcea), linear-gradient(30deg, #e5fcea 12%, transparent 12.5%, transparent 87%, #e5fcea 87.5%, #e5fcea), linear-gradient(150deg, #e5fcea 12%, transparent 12.5%, transparent 87%, #e5fcea 87.5%, #e5fcea), linear-gradient(60deg, #e5fcea77 25%, transparent 25.5%, transparent 75%, #e5fcea77 75%, #e5fcea77), linear-gradient(60deg, #e5fcea77 25%, transparent 25.5%, transparent 75%, #e5fcea77 75%, #e5fcea77);
+background-size: 54px 95px;
+background-position: 0 0, 0 0, 27px 47px, 27px 47px, 0 0, 27px 47px;
+}
+
+/* HEADINGS  */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    color: #017d54;
+}
+
+/* NAVBAR  */
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    padding: 0.6rem;
+}
+
+.navbar-brand-logo {
+    font-family: "Verdana", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: underline;
+    color: white;
+    margin: 0 2rem;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+}
+
+/* Gradient + Zoom effect on hover */
+.navbar-brand-logo:hover {
+    background: linear-gradient(90deg, #fdfc47, #24fe41); /* orange to pink */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.08);
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+    color: #003502 !important;
+}
+
+/* Avatar  */
+img.avatar,
+.user_popup img {
+    border-radius: 10%;
+    border: 1px solid #00935f;
+    box-shadow: 0 2px 8px rgba(83, 2, 214, 0.08);
+}
+
+
+
+/* Buttons  */
+.btn-primary,
+.btn-outline-primary {
+    background: linear-gradient(90deg, #08645c 0%, #189e4c 100%);
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Control, textbox  */
+.form-control,
+.form-select {
+    border-radius: 4px;
+    border: 1px solid #007b40;
+    box-shadow: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0ada75;
+    box-shadow: 0 0 0 0.2rem rgba(102, 16, 242, 0.08);
+}
+
+/* Alerts  */
+.alert-info {
+    background: linear-gradient(90deg, #e3f0ff 0%, #f3e7ff 100%);
+    color: #005f5f;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Pagination button  */
+.pagination .page-link {
+    color: #01a93e;
+    border-radius: 6px;
+    margin: 0 2px;
+    margin: 1rem;
+}
+
+.user_popup {
+    color: #00725e;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    padding: 2px 2px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.user_popup:hover {
+    background-color: #96ffd0;
+    color: #003006; 
+    text-decoration: underline;
+    box-shadow: 0 0 4px rgba(30, 136, 229, 0.4);
+    cursor: pointer;
+}
+
+/* Custom popover style */
+.popover {
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(16, 242, 163, 0.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+    .table {
+        font-size: 0.95rem;
+    }
+}

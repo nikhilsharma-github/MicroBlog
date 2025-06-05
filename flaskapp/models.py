@@ -167,7 +167,7 @@ class User(PaginatedAPIMixin, UserMixin, db.Model):
     # create avatar class 
     def avatar(self, size):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-        return f'https://www.gravatar.com/avatar/{digest}?d=monsterid&s={size}'
+        return f'https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}'
     
     def posts_count(self):
         query = sa.select(sa.func.count()).select_from(

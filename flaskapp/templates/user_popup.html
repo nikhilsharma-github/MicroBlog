@@ -1,28 +1,23 @@
-<div>
-    <img src="{{ user.avatar(64) }}" style="margin: 5px; float: left">
-    <p><a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}</a></p>
-    {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+<div class="p-2">
+    <img src="{{ user.avatar(64) }}" class="avatar shadow-sm me-2 mb-2 float-start" style="margin: 0;">
+    <p class="mb-1 fw-bold"><a href="{{ url_for('main.user', username=user.username) }}" class="text-success text-decoration-none ">{{ user.username }}</a></p>
+    {% if user.about_me %}<p class="mb-1">{{ user.about_me }}</p>{% endif %}
     <div class="clearfix"></div>
     {% if user.last_seen %}
-    <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('lll') }}</p>
+    <p class="mb-1 text-dark">{{ _('Last seen on') }}: {{ moment(user.last_seen).format('lll') }}</p>
     {% endif %}
-    <p>{{ _('%(count)d followers', count=user.followers_count()) }}, {{ _('%(count)d following',
-        count=user.following_count()) }}</p>
+    <p class="mb-2"><span class="badge bg-success">{{ _('%(count)d followers', count=user.followers_count()) }}</span> <span class="badge bg-warning">{{ _('%(count)d following', count=user.following_count()) }}</span></p>
     {% if user != current_user %}
     {% if not current_user.is_following(user) %}
-    <p>
-    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
+    <form action="{{ url_for('main.follow', username=user.username) }}" method="post" class="d-inline">
         {{ form.hidden_tag() }}
         {{ form.submit(value=_('Follow'), class_='btn btn-outline-primary btn-sm') }}
     </form>
-    </p>
     {% else %}
-    <p>
-    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
+    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post" class="d-inline">
         {{ form.hidden_tag() }}
         {{ form.submit(value=_('Unfollow'), class_='btn btn-outline-primary btn-sm') }}
     </form>
-    </p>
     {% endif %}
     {% endif %}
 </div>
