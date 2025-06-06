@@ -1,6 +1,35 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
-<h1>{{ _('An unexpected error has occurred') }}</h1>
-<p>{{ _('The administrator has been notified. Sorry for the inconvenience!') }}</p>
-<p><a href="{{ url_for('main.index') }}">{{ _('Back') }}</a></p>
+<style>
+    .error-container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .error-heading {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #bd0026;
+        margin-bottom: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .error-image {
+        max-width: 300px;
+        margin: 20px auto;
+        display: block;
+        border-radius: 2rem;
+    }
+</style>
+
+<div class="error-container">
+    <h1 class="error-heading">{{ _('An unexpected error has occurred') }}</h1>
+    <p>{{ _('The administrator has been notified. Sorry for the inconvenience!') }}</p>
+    <img src="{{ url_for('static', filename='images/500ISE.png') }}" alt="500 Internal Server Error"
+        class="error-image">
+
+    <button class="btn-primary p-3 rounded-2"><a href="{{ url_for('main.index') }}"
+            class="text-white text-decoration-none">{{ _('Go Back Home') }}</a></button>
+</div>
 {% endblock %}

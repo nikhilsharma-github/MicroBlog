@@ -87,6 +87,12 @@ img.avatar,
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+.post-label{
+    color:rgb(0, 148, 0);
+}
+[id^="post"] {
+    font-size:1.5rem;
+}
 /* Form Control, textbox  */
 .form-control,
 .form-select {
@@ -134,7 +140,6 @@ img.avatar,
 .user_popup {
     color: #00725e;
     font-weight: 600;
-    text-decoration: underline;
     transition: all 0.3s ease;
     padding: 2px 2px;
     margin-right: 5px;
@@ -144,7 +149,6 @@ img.avatar,
 .user_popup:hover {
     background-color: #96ffd0;
     color: #003006; 
-    text-decoration: underline;
     box-shadow: 0 0 4px rgba(30, 136, 229, 0.4);
     cursor: pointer;
 }

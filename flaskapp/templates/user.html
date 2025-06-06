@@ -15,15 +15,18 @@
         {% endif %}
         {% if user.last_seen %}<p class="text-black bg-white rounded-2 fs-5 p-1">
             <i class="fa-solid fa-clock me-2 text-warning"></i>{{ _('Last seen on') }}: {{
-            moment(user.last_seen).format('LLL') }}
+            moment(user.last_seen).format('LLLL') }}
             {% endif %}
         </p>
         <p class="fs-5">
-            <span class="badge bg-primary"><i class="fa-solid fa-person-walking-arrow-right me-1"></i>{{ _('%(count)d followers', count=user.followers_count()) }}</span>
-            <span class="badge bg-secondary"><i class="fa-solid fa-person-circle-plus me-1"></i>{{ _('%(count)d following', count=user.following_count()) }}</span>
+            <span class="badge bg-primary"><i class="fa-solid fa-person-walking-arrow-right me-1"></i>{{ _('%(count)d
+                followers', count=user.followers_count()) }}</span>
+            <span class="badge bg-secondary"><i class="fa-solid fa-person-circle-plus me-1"></i>{{ _('%(count)d
+                following', count=user.following_count()) }}</span>
         </p>
         {% if user == current_user %}
-        <p><a href="{{ url_for('main.edit_profile') }}" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-user-pen me-1"></i>{{ _('Edit your profile')
+        <p><a href="{{ url_for('main.edit_profile') }}" class="btn btn-outline-primary btn-sm"><i
+                    class="fa-solid fa-user-pen me-1"></i>{{ _('Edit your profile')
                 }}</a></p>
         {% elif not current_user.is_following(user) %}
         <form action="{{ url_for('main.follow', username=user.username) }}" method="post" class="d-inline">
@@ -37,11 +40,12 @@
         </form>
         {% endif %}
         {% if user != current_user %}
-        <a href="{{ url_for('main.send_message', recipient=user.username) }}"
-            class="btn btn-info  btn-sm ms-2">{{ _('Send private message') }}</a>
+        <a href="{{ url_for('main.send_message', recipient=user.username) }}" class="btn btn-info  btn-sm ms-2">{{
+            _('Send private message') }}</a>
         {% endif %}
     </div>
 </div>
+<h3 class="text-decoration-underline fst-italic ">Your Posts</h3>
 {% for post in posts %}
 {% include '_post.html' %}
 {% endfor %}

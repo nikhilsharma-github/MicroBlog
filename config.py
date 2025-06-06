@@ -25,7 +25,7 @@ class Config:
     ADMINS = ['nikhilsharma.csgeek@gmail.com']
     MAIL_DEFAULT_SENDER=('Nick Microblog test', 'nikhilsharma.csgeek@gmail.com')
 
-    POSTS_PER_PAGE = 10
+    POSTS_PER_PAGE = 5
 
     # Supporting Languages for Translation 
     LANGUAGES = ['en', 'ja', 'hi', 'ar'] 

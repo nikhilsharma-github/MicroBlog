@@ -3,16 +3,23 @@
 {% import "bootstrap_wtf.html" as wtf %}
 
 {% block content %}
+{% if title=='Home' %}
 <div class="d-flex align-items-center mb-4">
-    <h1 class="me-3">{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
+    <h1 class="me-3">{{ _('Hi, %(username)s! Welcome to MicroBlog', username=current_user.username) }}</h1>
 </div>
+{% endif %}
 {% if form %}
 <div class="mb-4">
     {{ wtf.quick_form(form) }}
 </div>
 {% endif %}
+{% if title=='Explore' %}
+<h3 class="text-decoration-underline fst-italic ">Explore All</h3>
+{% else %}
+<h3 class="text-decoration-underline fst-italic ">Recommendations For You</h3>
+{% endif %}
 {% for post in posts %}
-    {% include '_post.html' %}
+{% include '_post.html' %}
 {% endfor %}
 <nav aria-label="Post navigation">
     <ul class="pagination justify-content-center">
