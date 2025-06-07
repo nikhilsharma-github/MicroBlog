@@ -1,5 +1,3 @@
-# 🌱 **MicroBlog** – An Advanced Blog Application
-
 <h1 align="center" id="title">🌿 MicroBlog - A Flask Powered Social Blogging App 🌿</h1>
 
 <p align="center" id="description"><em>Developed a multi-feature rich blog platform using Python Flask, deployed on Ploomber.</em></p>
@@ -84,13 +82,13 @@ Flask-Babel, AJAX, HTML, CSS, JS, Werkzeug, Logging, Unittest, Gravatar, etc.
 ![Homepage Screenshot](screenshots/HomePage.png)
 
 ### Explore All
-![Explore All Screenshot](screenshots/Explore All.png)
+![Explore All Screenshot](screenshots/ExploreAll.png)
 
 ### Messages 
 ![Messages Screenshot](screenshots/Messages.png)
 
 ### User Profile
-![User Profile Screenshot](screenshots/User Profile.png)
+![User Profile Screenshot](screenshots/UserProfile.png)
 
 ### Reset Password
 ![Reset Password Screenshot](screenshots/ResetPassword.png)
