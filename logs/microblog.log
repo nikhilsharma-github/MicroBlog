@@ -31,3 +31,5 @@ Traceback (most recent call last):
   File "F:\NIKHIL INVENTORY\PROGRAMMING AND PROJECTS\python practice\microblog\flaskapp\models.py", line 170, in avatar
     return f'https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}'
 NameError: name 'digest' is not defined
+2025-06-07 15:11:41,200 INFO: Microblog startup [in P:\microblog\flaskapp\__init__.py:120]
+2025-06-07 15:24:45,657 INFO: Microblog startup [in P:\microblog\flaskapp\__init__.py:120]
